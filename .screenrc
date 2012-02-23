@@ -1,0 +1,24 @@
+startup_message off
+altscreen on
+autodetach on
+defscrollback 4096
+defencoding utf-8
+encoding utf-8 utf-8
+defbce on
+
+shelltitle "$ |bash"
+shell -${SHELL}
+
+term xterm-256color
+termcapinfo xterm* ti@:te@
+termcapinfo xterm-256color 'is=^[r^[mJ^[H^[?7h^[?1;4;6l'
+
+# %{=bu wk} change color to bold, underline, while, black
+# %{-}      reset color
+# %-w       previous windows of current window
+# %+w       next windows of current window
+# %n        window number
+# %t        window title
+# %c        24H time
+hardstatus alwayslastline "%{= wk} %-w%{=b bw}%n %t%{-}%+w %= %{= wb}%y/%m/%d %c "
+

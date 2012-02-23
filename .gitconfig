@@ -1,0 +1,29 @@
+[user]
+	name = kazuya kawaguchi
+	email = kawakazu80@gmail.com
+[color]
+	ui = auto
+    diff = auto
+    status = auto
+    branch = auto
+[alias]
+	co = checkout
+	br = branch -v
+	st = status
+	cm = commit
+	df = diff
+	ph = push
+	pl = pull
+	ft = fetch
+	sm = submodule
+    sb = show-branch
+    graph-log = log --graph --date=short --decorate=short --pretty=format:'%Cgreen%h %Creset%cd %C(cyan)%cn %Cred%d %Creset%s'
+    gl = log --graph --date=short --decorate=short --pretty=format:'%Cgreen%h %Creset%cd %C(cyan)%cn %Cred%d %Creset%s'
+    merge-conflict-log = log --merge -p --date=short --decorate=short --pretty=format:'%C(yellow bold)%m %Cgreen%h %Creset%cd %C(cyan)%cn %Cred%d %Creset%s'
+    mcl = log --merge -p --date=short --decorate=short --pretty=format:'%C(yellow bold)%m %Cgreen%h %Creset%cd %C(cyan)%cn %Cred%d %Creset%s'
+    merge-cancel = reset --hard HEAD
+    mc = reset --hard HEAD
+    merge-reset = reset --hard ORIG_HEAD
+    mr = reset --hard ORIG_HEAD
+[core]
+	editor = vim -c \"set fenc=utf-8\"
