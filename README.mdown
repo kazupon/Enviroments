@@ -7,7 +7,7 @@ This repository includes configration files, scripts and tiny commands for our d
 # Install
 Following next step to use this configration files.
 
-    $ git clone git@github.com:kazupon/enviroments.git ~/.enviroments
+    $ git clone git@github.com:kazupon/Enviroments.git ~/.enviroments
     $ cd ~/.enviroments
     $ git submodule init
     $ git submodule update
