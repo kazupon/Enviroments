@@ -95,9 +95,9 @@ let g:molokai_original=1
 
 " cursor settings
 augroup cch
-    autocmd! cch
-    autocmd WinLeave * set nocursorline
-    autocmd WinEnter,BufRead * set cursorline
+    au! cch
+    au WinLeave * set nocursorline
+    au WinEnter,BufRead * set cursorline
 augroup END
 :hi clear CursorLine
 :hi CursorLine gui=underline
@@ -116,70 +116,70 @@ set foldlevel=1 " method expand level.
 set encoding=utf-8
 
 " java
-"autocmd FileType java set makeprg=vimAnt
-"autocmd FileType java set efm=\ %#[javac]\ %#%f:%l:%c:%*\\d:%*\\d:\ %t%[%^:]%#:%m,\%A\ %#[javac]\ %f:%l:\ %m,%-Z\ %#[javac]\ %p^,%-C%.%#
-"autocmd FileType java :set efm=%A\ %#[javac]\ %f:%l:\ %m,%-Z\ %#[javac]\ %p^,%-C%.%#
+"au FileType java set makeprg=vimAnt
+"au FileType java set efm=\ %#[javac]\ %#%f:%l:%c:%*\\d:%*\\d:\ %t%[%^:]%#:%m,\%A\ %#[javac]\ %f:%l:\ %m,%-Z\ %#[javac]\ %p^,%-C%.%#
+"au FileType java :set efm=%A\ %#[javac]\ %f:%l:\ %m,%-Z\ %#[javac]\ %p^,%-C%.%#
 ":let java_highlight_all=1
 :let java_highlight_functions=1
 ":let java_highlight_debug=1
-autocmd Filetype java set tags+=~/.tags/java6
-autocmd FileType java set tags+=~/.tags/android
+au Filetype java set tags+=~/.tags/java6
+au FileType java set tags+=~/.tags/android
 "function! CompileJava()
 "    :make 
 "    :cw
 "endfunction
-"autocmd FileType java nmap <F5> :call CompileJava()<CR>
+"au FileType java nmap <F5> :call CompileJava()<CR>
 
 " c++
-autocmd FileType cpp set tabstop=2
-autocmd FileType cpp set shiftwidth=2
+au FileType cpp set tabstop=2
+au FileType cpp set shiftwidth=2
 
 " python
-autocmd FileType python set tabstop=2
-autocmd FileType python set shiftwidth=2
+au FileType python set tabstop=2
+au FileType python set shiftwidth=2
 
 " ruby
-autocmd FileType ruby set tabstop=2
-autocmd FileType ruby set shiftwidth=2
+au FileType ruby set tabstop=2
+au FileType ruby set shiftwidth=2
 
 " javascript
-autocmd FileType javascript set tabstop=2
-autocmd FileType javascript set shiftwidth=2
+au FileType javascript set tabstop=2
+au FileType javascript set shiftwidth=2
 
 " coffeescript
-autocmd Filetype coffee set tabstop=2
-autocmd FileType coffee set shiftwidth=2
+au Filetype coffee set tabstop=2
+au FileType coffee set shiftwidth=2
 
 " lua
-autocmd FileType lua set tabstop=3
-autocmd FileType lua set shiftwidth=3
+au FileType lua set tabstop=3
+au FileType lua set shiftwidth=3
 
 " html
-autocmd FileType html set tabstop=2
-autocmd FileType html set shiftwidth=2
+au FileType html set tabstop=2
+au FileType html set shiftwidth=2
 
 " css
-autocmd FileType css set tabstop=2
-autocmd FileType css set shiftwidth=2
+au FileType css set tabstop=2
+au FileType css set shiftwidth=2
 
 " less
-autocmd FileType less set tabstop=2
-autocmd FileType less set shiftwidth=2
+au FileType less set tabstop=2
+au FileType less set shiftwidth=2
 
 " arduino
 au BufNewFile,BufRead *.pde set filetype=arduino
 au BufNewFile,BufRead *.ino set filetype=arduino
-autocmd Filetype arduino set tabstop=2
-autocmd FileType arduino set shiftwidth=2
+au Filetype arduino set tabstop=2
+au FileType arduino set shiftwidth=2
 
 " processing
-autocmd Filetype pde set tabstop=2
-autocmd FileType pde set shiftwidth=2
+au Filetype pde set tabstop=2
+au FileType pde set shiftwidth=2
 
 " json
 au BufRead,BufNewFile *.json set filetype=json
-autocmd Filetype json set tabstop=2
-autocmd FileType json set shiftwidth=2
+au Filetype json set tabstop=2
+au FileType json set shiftwidth=2
 
 " markdown
 aut BufRead, BufNewFile *.md set filetype=markdown
@@ -281,18 +281,18 @@ inoremap <expr><C-l>     neocomplcache#complete_common_string()
 "inoremap <expr><CR>  neocomplcache#smart_close_popup() . "\<CR>"
 
 " enable omni completion.
-autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
-autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
-autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
-autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
-autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
+au FileType css setlocal omnifunc=csscomplete#CompleteCSS
+au FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
+au FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
+au FileType python setlocal omnifunc=pythoncomplete#Complete
+au FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 
 " enable heavy omni completion.
 if !exists('g:neocomplcache_omni_patterns')
     let g:neocomplcache_omni_patterns = {}
 endif
 let g:neocomplcache_omni_patterns.ruby = '[^. *\t]\.\w*\|\h\w*::'
-"autocmd FileType ruby setlocal omnifunc=rubycomplete#Complete
+"au FileType ruby setlocal omnifunc=rubycomplete#Complete
 let g:neocomplcache_omni_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
 
 
