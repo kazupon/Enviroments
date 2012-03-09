@@ -188,6 +188,17 @@ aut BufRead, BufNewFile *.md set filetype=markdown
 au BufRead,BufNewFile /opt/local/etc/nginx/services/* set ft=nginx 
 au BufRead,BufNewFile /opt/local/etc/nginx/*.conf set ft=nginx 
 
+" binary editting
+" vim -b : edit binary using xxd-format!
+augroup Binary
+    au!
+    au BufReadPre  *.bin let &binary =1
+    au BufReadPost * if &binary | silent %!xxd -g 1
+    au BufReadPost * set ft=xxd | endif
+    au BufWritePre * if &binary | %!xxd -r | endif
+    au BufWritePost * if &binary | silent %!xxd -g 1
+    au BufWritePost * set nomod | endif
+augroup END
 
 " quickrun
 let g:quickrun_config = {}
