@@ -190,7 +190,7 @@ au BufRead,BufNewFile /opt/local/etc/nginx/services/* set ft=nginx
 au BufRead,BufNewFile /opt/local/etc/nginx/*.conf set ft=nginx 
 
 " stylus
-au BufRead,BufNewFile *.stylus set filetype=stylus
+au BufRead,BufNewFile *.stylus set filetype=styl
 au Filetype stylus set tabstop=2
 au FileType stylus set shiftwidth=2
 
