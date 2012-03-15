@@ -34,6 +34,7 @@ Bundle 'Lokaltog/vim-powerline'
 Bundle 'taglist.vim'
 "Bundle 'tclem/vim-arduino'
 Bundle 'peplin/vim-arduino'
+Bundle 'wavded/vim-stylus'
 
 filetype plugin indent on
 " end of the vundle magic !!
@@ -187,6 +188,11 @@ aut BufRead, BufNewFile *.md set filetype=markdown
 " nginx 
 au BufRead,BufNewFile /opt/local/etc/nginx/services/* set ft=nginx 
 au BufRead,BufNewFile /opt/local/etc/nginx/*.conf set ft=nginx 
+
+" stylus
+au BufRead,BufNewFile *.stylus set filetype=stylus
+au Filetype stylus set tabstop=2
+au FileType stylus set shiftwidth=2
 
 " binary editting
 " vim -b : edit binary using xxd-format!
