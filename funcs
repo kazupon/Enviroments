@@ -21,7 +21,7 @@ init_paths () {
 }
 
 init_dir_colors () {
-    eval $(dircolors -b ~/.dir_colors)
+    eval $(dircolors -b ~/.dir_colors 1>/dev/null 2>&1)
     clear
 }
 
