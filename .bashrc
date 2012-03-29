@@ -34,8 +34,6 @@ export GISTY_SSL_CA=/opt/local/etc/openssl/cert.pem
 export LUA_CPATH="./?.dylib;/opt/local/lib/lua/5.1/?.dylib;/opt/local/lib/lua/5.1/loadall.dylib"
 export NODE_ENV=development
 
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" # Load RVM function
-
 export WORKON_HOME=$HOME/.virtualenvs
 export JSTESTDRIVER_HOME=$PATH
 
