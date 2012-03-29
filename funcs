@@ -20,6 +20,10 @@ init_paths () {
     done
 }
 
+init_dir_colors () {
+    eval $(dircolors -b ~/.dir_colors)
+}
+
 init_aliases () {
     # basic aliases
     alias grep='grep --color'

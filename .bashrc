@@ -10,6 +10,8 @@ init_paths
 
 init_aliases
 
+init_dir_colors
+
 # init shell enviroments
 export LANG=ja_JP.UTF-8
 export DISPLAY=:0.0
@@ -41,11 +43,6 @@ export JSTESTDRIVER_HOME=$PATH
 #source /opt/local/Library/Frameworks/Python.framework/Versions/2.5/bin/virtualenvwrapper.sh
 #source /opt/local/Library/Frameworks/Python.framework/Versions/2.6/bin/virtualenvwrapper.sh
 
-
-
-# init dircolors
-eval $(dircolors -b ~/.dir_colors)
-clear
 
 
 # init npm 
