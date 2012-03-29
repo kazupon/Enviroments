@@ -22,6 +22,7 @@ init_paths () {
 
 init_dir_colors () {
     eval $(dircolors -b ~/.dir_colors)
+    clear
 }
 
 init_aliases () {
