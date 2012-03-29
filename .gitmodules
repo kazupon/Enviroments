@@ -4,3 +4,6 @@
 [submodule "bin/.nave"]
 	path = bin/.nave
 	url = https://github.com/isaacs/nave.git
+[submodule "bin/.pythonbrew"]
+	path = bin/.pythonbrew
+	url = https://github.com/utahta/pythonbrew.git
