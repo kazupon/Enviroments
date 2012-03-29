@@ -65,7 +65,6 @@ RESET 0 # reset to "normal" color
 DIR 01;36 # directory
 LINK 01;34;46 # symbolic link. (If you set this to 'target' instead of a
  # numerical value, the color is as for the file pointed to.)
-HARDLINK 44;37 # regular file with more than one link
 FIFO 40;33 # pipe
 SOCK 01;35 # socket
 DOOR 01;35 # door
