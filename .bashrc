@@ -1,37 +1,49 @@
+# global definitions
+if [ -f /etc/bashrc ]; then
+    . /etc/bashrc
+fi
+
+# init paths
+export PATH=/usr/local/bin:$PATH
+export PATH=/opt/local/bin:$PATH
+export PATH=/opt/local/sbin:$PATH
+export PATH=$HOME/bin:$PATH
+export MANPATH=/opt/local/man:$MANPATH
+export MANPATH=/opt/local/share/man:$MANPATH
+
+
+# init shell enviroments
+export LANG=ja_JP.UTF-8
+export DISPLAY=:0.0
+export HISTCONTROL=ignoreboth
+export __CF_USER_TEXT_ENCODING="0x1F5:0x08000100:14"
+
+# init editor
+#export EDITOR='mate -w'
+export EDITOR='vim -c "set fenc=utf-8"'
+
+# init libraries
+export LESSEDIT='vi %f'
+export LESS='-R'
+export LESSOPEN='| /opt/local/bin/src-hilite-lesspipe.sh %s'
+
+export PYTHONSTARTUP=~/.pythonstartup
+export GISTY_DIR=$HOME/tmp/gist
+export GISTY_SSL_CA=/opt/local/etc/openssl/cert.pem
+
+export LUA_CPATH="./?.dylib;/opt/local/lib/lua/5.1/?.dylib;/opt/local/lib/lua/5.1/loadall.dylib"
+export NODE_ENV=development
+
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" # Load RVM function
 
 export WORKON_HOME=$HOME/.virtualenvs
 export JSTESTDRIVER_HOME=$PATH
 
-export PATH=/usr/local/bin:$PATH
-export PATH=/opt/local/bin:/opt/local/sbin:$PATH
-export PATH=$HOME/bin:$PATH
-
-export MANPATH=/opt/local/man:$MANPATH
-export MANPATH=/opt/local/share/man:$MANPATH
-
-export LANG=ja_JP.UTF-8
-export DISPLAY=:0.0
-export __CF_USER_TEXT_ENCODING="0x1F5:0x08000100:14"
-export PYTHONSTARTUP=~/.pythonstartup
-export HISTCONTROL=ignoreboth
-#export EDITOR='mate -w'
-export EDITOR='vim -c "set fenc=utf-8"'
-export LESSEDIT='vi %f'
-export LESS='-R'
-export LESSOPEN='| /opt/local/bin/src-hilite-lesspipe.sh %s'
-
-export GISTY_DIR=$HOME/tmp/gist
-export GISTY_SSL_CA=/opt/local/etc/openssl/cert.pem
-
-export LUA_CPATH="./?.dylib;/opt/local/lib/lua/5.1/?.dylib;/opt/local/lib/lua/5.1/loadall.dylib"
-
-export NODE_ENV=development
-
 #  python virtal enviroment
 #source /opt/local/Library/Frameworks/Python.framework/Versions/2.5/bin/virtualenvwrapper.sh
 #source /opt/local/Library/Frameworks/Python.framework/Versions/2.6/bin/virtualenvwrapper.sh
 
+# init basic alias
 alias grep='grep --color'
 alias egrep='egrep --color'
 alias base64=gbase64
@@ -134,16 +146,18 @@ alias whoami=gwhoami
 alias yes=gyes
 alias sed=gsed
 
-#alias gvim='env LANG=ja_JP.UTF-8 open -a /Applications/MacVim.app "$@"'
-#alias gvim='mvim --remote-tab-silent "$@"'
+# init my alias
 alias wget='wget --no-check-certificate'
 alias js=node
 #alias titanium='/Library/Application\ Support/Titanium/mobilesdk/osx/1.6.2/titanium.py'
 
+
+# init dircolors
 eval $(dircolors -b ~/.dir_colors)
 clear
 
 
+# init npm 
 ###-begin-npm-completion-###
 #
 # npm command completion script
