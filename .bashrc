@@ -1,16 +1,12 @@
+profiles=$HOME/.enviroments
+source "${profiles}/funcs"
+
 # global definitions
 if [ -f /etc/bashrc ]; then
     . /etc/bashrc
 fi
 
-# init paths
-export PATH=/usr/local/bin:$PATH
-export PATH=/opt/local/bin:$PATH
-export PATH=/opt/local/sbin:$PATH
-export PATH=$HOME/bin:$PATH
-export MANPATH=/opt/local/man:$MANPATH
-export MANPATH=/opt/local/share/man:$MANPATH
-
+init_paths
 
 # init shell enviroments
 export LANG=ja_JP.UTF-8
