@@ -12,7 +12,7 @@ init_aliases
 
 init_dir_colors
 
-init_enviroments
+init_env
 
 #  python virtal enviroment
 #source /opt/local/Library/Frameworks/Python.framework/Versions/2.5/bin/virtualenvwrapper.sh
