@@ -157,8 +157,6 @@ init_env () {
 
     export LUA_CPATH="./?.dylib;/opt/local/lib/lua/5.1/?.dylib;/opt/local/lib/lua/5.1/loadall.dylib"
     export NODE_ENV=development
-
-    export WORKON_HOME=$HOME/.virtualenvs
     export JSTESTDRIVER_HOME=$PATH
 }
 
