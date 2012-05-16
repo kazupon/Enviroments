@@ -155,6 +155,7 @@ init_env () {
     export GISTY_DIR=$HOME/tmp/gist
     export GISTY_SSL_CA=/opt/local/etc/openssl/cert.pem
 
+    export LUA_PATH="./?.lua;/opt/local/share/lua/5.1/?.lua"
     export LUA_CPATH="./?.dylib;/opt/local/lib/lua/5.1/?.dylib;/opt/local/lib/lua/5.1/loadall.dylib"
     export NODE_ENV=development
     export JSTESTDRIVER_HOME=$PATH
