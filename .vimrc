@@ -132,6 +132,10 @@ au FileType java set tags+=~/.tags/android
 "endfunction
 "au FileType java nmap <F5> :call CompileJava()<CR>
 
+" c
+au FileType c set tabstop=2
+au FileType c set shiftwidth=2
+
 " c++
 au FileType cpp set tabstop=2
 au FileType cpp set shiftwidth=2
