@@ -36,6 +36,7 @@ Bundle 'taglist.vim'
 "Bundle 'tclem/vim-arduino'
 Bundle 'peplin/vim-arduino'
 Bundle 'wavded/vim-stylus'
+Bundle 'kana/vim-smartinput'
 
 filetype plugin indent on
 " end of the vundle magic !!
