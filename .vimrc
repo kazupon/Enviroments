@@ -158,8 +158,8 @@ au Filetype coffee set tabstop=2
 au FileType coffee set shiftwidth=2
 
 " lua
-au FileType lua set tabstop=3
-au FileType lua set shiftwidth=3
+au FileType lua set tabstop=2
+au FileType lua set shiftwidth=2
 
 " html
 au FileType html set tabstop=2
@@ -189,7 +189,8 @@ au Filetype json set tabstop=2
 au FileType json set shiftwidth=2
 
 " markdown
-aut BufRead, BufNewFile *.md set filetype=markdown
+au BufRead,BufNewFile *.md set filetype=markdown
+au BufRead,BufNewFile *.mkd set filetype=markdown
 
 " nginx 
 au BufRead,BufNewFile /opt/local/etc/nginx/services/* set ft=nginx 
