@@ -1,0 +1,2 @@
+. ~/bin/.nvm/nvm.sh
+
