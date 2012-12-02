@@ -392,6 +392,16 @@ let g:syntastic_mode_map = {
 "let g:syntastic_enable_signs=1
 "let g:syntastic_error_symbol='✗'
 "let g:syntastic_warning_symbol='⚠'
+nnoremap ,sc :<C-u>SyntasticCheck<CR>
+
+
+"vim-fugitive'
+nnoremap gst :<C-u>Gstatus<CR>
+nnoremap gwr :<C-u>Gwrite<CR>
+nnoremap gre :<C-u>Gread<CR>
+nnoremap gcm :<C-u>Gcommit<CR>
+nnoremap gdf :<C-u>Gdiff<CR>
+nnoremap gbl :<C-u>Gblame<CR>
 
 
 " mouse term settings
