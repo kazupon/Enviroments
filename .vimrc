@@ -37,6 +37,7 @@ Bundle 'taglist.vim'
 Bundle 'peplin/vim-arduino'
 Bundle 'wavded/vim-stylus'
 Bundle 'kana/vim-smartinput'
+Bundle 'tpope/vim-fugitive'
 
 filetype plugin indent on
 " end of the vundle magic !!
@@ -362,6 +363,7 @@ hi IndentGuidesOdd ctermbg=black
 set guifont=Monaco-Powerline:h11
 set guifontwide=Monaco-Powerline:h11
 let g:Powerline_symbols='fancy'
+let g:Powerline_colorscheme='skwp'
 
 
 " vim-arduino 
