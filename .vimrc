@@ -20,6 +20,13 @@ Bundle 'guicolorscheme.vim'
 Bundle 'Solarized'
 Bundle 'molokai'
 Bundle 'rdark'
+Bundle 'nanotech/jellybeans.vim'
+Bundle 'moria'
+Bundle 'wombat'
+Bundle 'darkspectrum'
+Bundle 'robokai'
+Bundle 'chriskempson/vim-tomorrow-theme'
+Bundle 'desert'
 
 " utility
 Bundle 'Shougo/vimproc'
@@ -96,6 +103,21 @@ let g:molokai_original=1
 " rdark
 "colorscheme rdark
 "let rdark_current_line=1
+"jellybeans"
+"colorscheme jellybeans
+"moria
+"let moria_style = 'white'
+"let moria_style='black' 
+"colorscheme moria
+"let moria_monochrome=1
+"Wombat
+"colorscheme wombat
+"darkspectrum
+"colorscheme darkspectrum
+"robokai
+"colorscheme robokai
+"tomorrow-theme (tomorrow, tomorrow-night, tomorrow-night-bright, tomorrow-night-blue, tomorrow-night-eighties)
+"colorscheme tomorrow-night-bright
 
 
 " cursor settings
