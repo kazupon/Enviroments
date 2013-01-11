@@ -240,10 +240,17 @@ augroup END
 " quickrun
 let g:quickrun_config = {}
 let g:quickrun_config.javascript = { 'command': 'node' }
+"let g:quickrun_config.markdown = {
+"    \ 'type': 'markdown/pandoc',
+"    \ 'outputter': 'browser',
+"    \ 'cmdopt': '-s'
+"    \ }
 let g:quickrun_config.markdown = {
-    \ 'type': 'markdown/pandoc',
-    \ 'outputter': 'browser',
-    \ 'cmdopt': '-s'
+    \ 'outputter': 'null',
+    \ 'command': 'open',
+    \ 'cmdopt': '-a',
+    \ 'args': 'Marked',
+    \ 'exec': '%c %o %a %s'
     \ }
 let g:quickrun_config.lua = { 'command': 'lua' }
 
