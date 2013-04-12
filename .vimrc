@@ -22,11 +22,11 @@ Bundle 'molokai'
 Bundle 'rdark'
 Bundle 'nanotech/jellybeans.vim'
 Bundle 'moria'
-Bundle 'wombat'
+"Bundle 'wombat'
 Bundle 'darkspectrum'
 Bundle 'robokai'
 Bundle 'chriskempson/vim-tomorrow-theme'
-Bundle 'desert'
+"Bundle 'desert'
 
 " utility
 Bundle 'Shougo/vimproc'
@@ -34,18 +34,21 @@ Bundle 'Shougo/vimshell'
 Bundle 'thinca/vim-quickrun'
 Bundle 'open-browser.vim'
 Bundle 'Shougo/neocomplcache'
-Bundle 'Shougo/neocomplcache-snippets-complete'
+"Bundle 'Shougo/neocomplcache-snippets-complete'
+Bundle 'Shougo/neosnippet'
 Bundle 'surround.vim'
 Bundle 'nathanaelkane/vim-indent-guides'
 "Bundle 'buftabs'
 Bundle 'Lokaltog/vim-powerline'
+"Bundle 'Lokaltog/powerline'
 Bundle 'taglist.vim'
-"Bundle 'tclem/vim-arduino'
 Bundle 'peplin/vim-arduino'
 Bundle 'wavded/vim-stylus'
 Bundle 'kana/vim-smartinput'
 Bundle 'tpope/vim-fugitive'
 Bundle 'scrooloose/syntastic'
+Bundle 'airblade/vim-gitgutter'
+"Bundle 'akiomik/git-gutter-vim'
 
 filetype plugin indent on
 " end of the vundle magic !!
@@ -393,7 +396,7 @@ hi IndentGuidesOdd ctermbg=black
 set guifont=Monaco-Powerline:h11
 set guifontwide=Monaco-Powerline:h11
 let g:Powerline_symbols='fancy'
-let g:Powerline_colorscheme='skwp'
+"let g:Powerline_colorscheme='skwp'
 
 
 " vim-arduino 
@@ -431,6 +434,11 @@ nnoremap gre :<C-u>Gread<CR>
 nnoremap gcm :<C-u>Gcommit<CR>
 nnoremap gdf :<C-u>Gdiff<CR>
 nnoremap gbl :<C-u>Gblame<CR>
+
+"vim-gitgutter
+"let g:gitgutter_enabled = 0
+"let g:gitgutter_highlights = 1 
+highlight clear SignColumn
 
 
 " mouse term settings
