@@ -13,7 +13,8 @@ term xterm-256color
 termcapinfo xterm* ti@:te@
 termcapinfo xterm-256color 'is=^[r^[mJ^[H^[?7h^[?1;4;6l'
 
-idle 1200
+#idle 1200
+#blankerprg /usr/games/fortune
 
 # %{=bu wk} change color to bold, underline, while, black
 # %{-}      reset color
