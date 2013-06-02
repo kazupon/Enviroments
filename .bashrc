@@ -1,10 +1,11 @@
 profiles=$HOME/.enviroments
-source "${profiles}/funcs"
 
 # global definitions
 if [ -f /etc/bashrc ]; then
     . /etc/bashrc
 fi
+
+source "${profiles}/funcs"
 
 init_paths
 
