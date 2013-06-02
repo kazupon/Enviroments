@@ -1,5 +1,8 @@
 init_paths () {
-    export PATH=$HOME/bin:$PATH
+    if [ -d "$HOME/bin" ] ; then
+        PATH="$HOME/bin:$PATH"
+    fi
+
     for i in /usr/local $HOME/opt/local $HOME/homebrew; do
         local bin_path="$i/bin"
         if [ -d "$bin_path" ]; then
