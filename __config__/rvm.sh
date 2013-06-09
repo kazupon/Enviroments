@@ -4,4 +4,9 @@ if [ -s "$HOME/.rvm/scripts/rvm" ]; then
     if [ -f ".rvmrc" ]; then
         source ".rvmrc"
     fi
+
+    # path
+    if [ -d "$HOME/.rvm/bin" ] ; then
+        PATH=$PATH:$HOME/.rvm/bin
+    fi
 fi

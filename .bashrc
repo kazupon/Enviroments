@@ -17,4 +17,3 @@ init_env
 
 # add configration from '__config__'
 init_add_config
-
