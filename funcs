@@ -39,7 +39,7 @@ init_aliases () {
     #alias titanium='/Library/Application\ Support/Titanium/mobilesdk/osx/1.6.2/titanium.py'
 }
 
-init_env () {
+init_common_env () {
     # init shell
     export LANG=ja_JP.UTF-8
     export DISPLAY=:0.0
@@ -54,20 +54,10 @@ init_env () {
     export LESSEDIT='vi %f'
     export LESS='-R'
     #export LESSOPEN='| /opt/local/bin/src-hilite-lesspipe.sh %s'
-
-    export PYTHONSTARTUP=~/.pythonstartup
-    export GISTY_DIR=$HOME/tmp/gist
-    export GISTY_SSL_CA=$HOME/homebrew/etc/openssl/cert.pem
-    export GISTY_SSL_VERIFY="NONE"
-
-    export LUA_PATH="./?.lua;$HOME/homebrew/share/lua/5.1/?.lua;$HOME/homebrew/lib/lua/5.1/?.lua;$HOME/opt/local/share/lua/5.1/?.lua;;"
-    export LUA_CPATH="./?.dylib;$HOME/homebrew/lib/lua/5.1/?.dylib;$HOME/homebrew/lib/lua/5.1/?.so;$HOME/homebrew/lib/lua/5.1/loadall.dylib;$HOME/homebrew/lib/lua/5.1/loadall.*so;$HOME/opt/local/lib/lua/5.1/?.dylib;;"
-    export NODE_ENV=development
-    export JSTESTDRIVER_HOME=$PATH
 }
 
-init_sub_module () {
-    for i in "$profiles/__config__"; do
+init_sub_env () {
+    for i in "$profiles/__env__"; do
         # Additional initialize scripts
         for f in "$i"/$1 "$i"/*.sh; do
             if [ -f "$f" ]; then

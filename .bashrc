@@ -13,7 +13,7 @@ init_aliases
 
 init_dir_colors
 
-init_env
+init_common_env
 
-# add configration from '__config__'
-init_sub_module
+# add configration from '__env__'
+init_sub_env
