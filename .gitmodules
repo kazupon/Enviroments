@@ -1,3 +1,6 @@
 [submodule "bin/.nvm"]
 	path = bin/.nvm
 	url = git://github.com/creationix/nvm.git
+[submodule ".vim/bundle/neobundle.vim"]
+	path = .vim/bundle/neobundle.vim
+	url = git@github.com:Shougo/neobundle.vim.git
