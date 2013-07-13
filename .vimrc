@@ -27,8 +27,10 @@ NeoBundle 'groenewege/vim-less'
 NeoBundle 'wavded/vim-stylus'
 NeoBundle 'taglist.vim'
 NeoBundle 'scrooloose/syntastic'
+NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'Shougo/neocomplcache'
 NeoBundle 'Shougo/neosnippet'
+NeoBundle 'tpope/vim-rails'
 
 filetype plugin indent on " Required!
 "
