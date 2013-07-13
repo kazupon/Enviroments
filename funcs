@@ -66,7 +66,7 @@ init_env () {
     export JSTESTDRIVER_HOME=$PATH
 }
 
-init_add_config () {
+init_sub_module () {
     for i in "$profiles/__config__"; do
         # Additional initialize scripts
         for f in "$i"/$1 "$i"/*.sh; do
