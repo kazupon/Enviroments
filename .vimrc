@@ -93,6 +93,7 @@ set ruler
 set cmdheight=2
 set showcmd
 set title
+"set colorcolumn=80
 set t_Co=256
 "colorschem koehler
 "GuiColorScheme desert256
