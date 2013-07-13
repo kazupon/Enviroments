@@ -25,6 +25,8 @@ NeoBundle 'jade.vim'
 NeoBundle 'JSON.vim'
 NeoBundle 'groenewege/vim-less'
 NeoBundle 'wavded/vim-stylus'
+NeoBundle 'taglist.vim'
+NeoBundle 'scrooloose/syntastic'
 
 filetype plugin indent on " Required!
 "
@@ -228,3 +230,23 @@ nnoremap gbl :<C-u>Gblame<CR>
 "let g:gitgutter_enabled = 0
 "let g:gitgutter_highlights = 1 
 highlight clear SignColumn
+
+
+" vim-syntatic
+let g:syntastic_check_on_open = 0
+let g:syntastic_check_on_save = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_loc_list_height = 6
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+let g:syntastic_javascript_checker = 'jshint'
+let g:syntastic_mode_map = {
+      \ 'mode': 'active',
+      \ 'active_filetypes': ['ruby', 'javascript'],
+      \ 'passive_filetypes': []
+      \ }
+"let g:syntastic_enable_signs=1
+"let g:syntastic_error_symbol='✗'
+"let g:syntastic_warning_symbol='⚠'
+nnoremap ,sc :<C-u>SyntasticCheck<CR>
