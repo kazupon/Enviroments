@@ -1,12 +1,3 @@
-[submodule ".vim/vundle.git"]
-	path = .vim/vundle.git
-	url = git://github.com/gmarik/vundle.git
-[submodule "bin/.nave"]
-	path = bin/.nave
-	url = https://github.com/isaacs/nave.git
-[submodule "bin/.pythonbrew"]
-	path = bin/.pythonbrew
-	url = https://github.com/utahta/pythonbrew.git
 [submodule "bin/.nvm"]
 	path = bin/.nvm
 	url = git://github.com/creationix/nvm.git
