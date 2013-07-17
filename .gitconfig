@@ -27,3 +27,5 @@
     mr = reset --hard ORIG_HEAD
 [core]
 	editor = vim -c \"set fenc=utf-8\"
+[url "https://"]
+	insteadOf = git://
