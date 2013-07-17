@@ -8,7 +8,7 @@
     branch = auto
 [alias]
 	co = checkout
-	br = branch -v
+	br = branch -vv
 	st = status
 	cm = commit
 	df = diff
