@@ -31,6 +31,7 @@ NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'Shougo/neocomplcache'
 NeoBundle 'Shougo/neosnippet'
 NeoBundle 'tpope/vim-rails'
+NeoBundle 'kana/vim-smartinput'
 
 filetype plugin indent on " Required!
 "
