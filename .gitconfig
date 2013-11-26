@@ -6,16 +6,21 @@
     diff = auto
     status = auto
     branch = auto
+[pager]
+    log = diff-highlight | less
+    show = diff-highlight | less
+    diff = diff-highlight | less
 [alias]
-	co = checkout
-	br = branch -vv
-	st = status
-	cm = commit
-	df = diff
-	ph = push
-	pl = pull
-	ft = fetch
-	sm = submodule
+    co = checkout
+    br = branch -vv
+    st = status
+    cm = commit
+    df = diff
+    dfw = diff --word-diff
+    ph = push
+    pl = pull
+    ft = fetch
+    sm = submodule
     sb = show-branch
     graph-log = log --graph --date=short --decorate=short --pretty=format:'%Cgreen%h %Creset%cd %C(cyan)%cn %Cred%d %Creset%s'
     gl = log --graph --date=short --decorate=short --pretty=format:'%Cgreen%h %Creset%cd %C(cyan)%cn %Cred%d %Creset%s'
