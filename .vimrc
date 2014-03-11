@@ -32,6 +32,8 @@ NeoBundle 'Shougo/neocomplcache'
 NeoBundle 'Shougo/neosnippet'
 NeoBundle 'tpope/vim-rails'
 NeoBundle 'kana/vim-smartinput'
+NeoBundle 'ekalinin/Dockerfile.vim'
+NeoBundle 'deris/vim-kobito'
 
 filetype plugin indent on " Required!
 "
