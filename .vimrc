@@ -34,6 +34,7 @@ NeoBundle 'tpope/vim-rails'
 NeoBundle 'kana/vim-smartinput'
 NeoBundle 'ekalinin/Dockerfile.vim'
 NeoBundle 'deris/vim-kobito'
+NeoBundle 'nono/vim-handlebars'
 
 filetype plugin indent on " Required!
 "
