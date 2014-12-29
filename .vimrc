@@ -1,5 +1,10 @@
 set nocompatible " Be iMproved
 
+" go
+let g:gofmt_command = 'goimports'
+set rtp^=${GOROOT}/misc/vim
+set rtp^=${GOPATH}/src/github.com/nsf/gocode/vim
+
 if has('vim_starting')
   set runtimepath+=~/.vim/bundle/neobundle.vim/
 endif
@@ -189,6 +194,11 @@ au BufRead,BufNewFile /opt/local/etc/nginx/*.conf set ft=nginx
 au BufRead,BufNewFile *.stylus set filetype=styl
 au Filetype stylus set tabstop=2
 au FileType stylus set shiftwidth=2
+
+" go
+au BufWritePre *.go Fmt
+au BufNewFile,BufRead *.go set sw=4 noexpandtab ts=4
+au FileType go compiler go
 
 
 " -----------------------------------------------------------------------------
