@@ -9,4 +9,6 @@ if [ -s "$HOME/.rvm/scripts/rvm" ]; then
     if [ -d "$HOME/.rvm/bin" ] ; then
         PATH=$PATH:$HOME/.rvm/bin
     fi
+
+    rvm use ruby-2.1.1 1>/dev/null 2>&1
 fi
