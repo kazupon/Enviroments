@@ -1,0 +1,10 @@
+20,23c20,23
+<             'lock': u'\uE0A2',
+<             'network': u'\uE0A2',
+<             'separator': u'\uE0B0',
+<             'separator_thin': u'\uE0B1'
+---
+>             'lock': u'\u2B64',
+>             'network': u'\u2B64',
+>             'separator': u'\u2B80',
+>             'separator_thin': u'\u2B81'
