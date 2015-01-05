@@ -3,6 +3,7 @@ function init_antigen () {
         source $HOME/.zsh/antigen/antigen.zsh
         antigen bundle zsh-users/zsh-syntax-highlighting
         antigen bundle zsh-users/zsh-completions src
+        antigen bundle Tarrasch/zsh-bd
         antigen bundle mollifier/anyframe
         antigen apply
     fi
