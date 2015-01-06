@@ -6,7 +6,7 @@ defencoding utf-8
 encoding utf-8 utf-8
 defbce on
 
-shelltitle "$ |bash"
+shelltitle "$ |shell"
 shell -${SHELL}
 
 term xterm-256color
