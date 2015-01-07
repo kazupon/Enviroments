@@ -4,6 +4,7 @@ function init_antigen () {
         antigen bundle zsh-users/zsh-syntax-highlighting
         antigen bundle zsh-users/zsh-completions src
         antigen bundle Tarrasch/zsh-bd
+        antigen bundle m4i/cdd
         antigen bundle mollifier/anyframe
         antigen apply
     fi
