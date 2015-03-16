@@ -41,6 +41,10 @@ NeoBundle 'kana/vim-smartinput'
 NeoBundle 'ekalinin/Dockerfile.vim'
 NeoBundle 'deris/vim-kobito'
 NeoBundle 'nono/vim-handlebars'
+NeoBundle 'briancollins/vim-jst'
+NeoBundle 'godlygeek/tabular'
+NeoBundle 'joker1007/vim-markdown-quote-syntax'
+NeoBundle 'plasticboy/vim-markdown'
 
 filetype plugin indent on " Required!
 "
@@ -387,3 +391,52 @@ endif
 
 " Enable snipMate compatibility feature.
 " let g:neosnippet#enable_snipmate_compatibility = 1
+
+" vim-markdown extension
+" site: https://github.com/plasticboy/vim-markdown
+" command: https://github.com/plasticboy/vim-markdown#commands
+" let g:vim_markdown_folding_disabled=1
+" set [no]foldenable
+" let g:vim_markdown_no_default_key_mappings=1
+let g:vim_markdown_math=1
+let g:vim_markdown_frontmatter=1
+
+" vim-markdown-quote-syntax
+" site: https://github.com/joker1007/vim-markdown-quote-syntax
+" Add syntax rule
+"let g:markdown_quote_syntax_filetypes = {
+"        \ "coffee" : {
+"        \   "start" : "coffee",
+"        \},
+"        \ "css" : {
+"        \   "start" : "\\%(css\\|scss\\)",
+"        \},
+"        \ "mustache" : {
+"        \   "start" : "mustache",
+"        \},
+"        \ "haml" : {
+"        \   "start" : "haml",
+"        \}
+"  \}
+
+" 'start' and 'end' is vim regular expression.
+" need to care backslash.
+
+" Add code blocks
+"let g:markdown_quote_syntax_codeblocks = {
+"        \["^\\s*{% *highlight \\+", "\\( .*%\\|%\\)}",
+"          \"^\\s*{% *endhighlight\\( .*%\\|%\\)}"]
+"  \}
+
+" Each codeblock is defined as:
+"
+"    'codeblock[0].filetype.codeblock[1]<code lines>codeblock[2]'
+"
+" Above example is for the liquid highlight tag. (It is already included by default.)
+"    {% highlight vim %}
+"    any codes
+"    ...
+"    {% endhighlight %}
+
+" Add other file types in which quote syntax should be on.
+" let g:markdown_quote_syntax_on_filetypes = ['text']
