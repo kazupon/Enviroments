@@ -45,6 +45,8 @@ NeoBundle 'briancollins/vim-jst'
 NeoBundle 'godlygeek/tabular'
 NeoBundle 'joker1007/vim-markdown-quote-syntax'
 NeoBundle 'plasticboy/vim-markdown'
+NeoBundle 'junegunn/vim-emoji'
+NeoBundle 'rhysd/github-complete.vim'
 
 filetype plugin indent on " Required!
 "
@@ -127,7 +129,7 @@ set cursorline
 au Filetype java set tags+=~/.tags/java6
 au FileType java set tags+=~/.tags/android
 "function! CompileJava()
-"    :make 
+"    :make
 "    :cw
 "endfunction
 "au FileType java nmap <F5> :call CompileJava()<CR>
@@ -191,14 +193,19 @@ au FileType json set shiftwidth=2
 au BufRead,BufNewFile *.md set filetype=markdown
 au BufRead,BufNewFile *.mkd set filetype=markdown
 
-" nginx 
-au BufRead,BufNewFile /opt/local/etc/nginx/services/* set ft=nginx 
-au BufRead,BufNewFile /opt/local/etc/nginx/*.conf set ft=nginx 
+" nginx
+au BufRead,BufNewFile /opt/local/etc/nginx/services/* set ft=nginx
+au BufRead,BufNewFile /opt/local/etc/nginx/*.conf set ft=nginx
 
 " stylus
 au BufRead,BufNewFile *.stylus set filetype=styl
 au Filetype stylus set tabstop=2
 au FileType stylus set shiftwidth=2
+
+" vue
+au BufRead,BufNewFile *.vue set filetype=html
+au Filetype vue set tabstop=2
+au FileType vue set shiftwidth=2
 
 " go
 au BufWritePre *.go Fmt
@@ -251,7 +258,7 @@ nnoremap gbl :<C-u>Gblame<CR>
 
 "vim-gitgutter
 "let g:gitgutter_enabled = 0
-"let g:gitgutter_highlights = 1 
+"let g:gitgutter_highlights = 1
 highlight clear SignColumn
 
 
@@ -288,7 +295,7 @@ let g:neocomplcache_enable_camel_case_completion = 1
 " Use underbar completion.
 let g:neocomplcache_enable_underbar_completion = 1
 " Set minimum syntax keyword length.
-let g:neocomplcache_min_syntax_length = 5 
+let g:neocomplcache_min_syntax_length = 5
 let g:neocomplcache_lock_buffer_name_pattern = '\*ku\*'
 
 " Define dictionary.
@@ -297,7 +304,7 @@ let g:neocomplcache_dictionary_filetype_lists = {
     \ 'vimshell' : $HOME.'/.vimshell_hist',
     \ 'scheme' : $HOME.'/.gosh_completions'
     \ }
-    
+
 " Define keyword.
 if !exists('g:neocomplcache_keyword_patterns')
     let g:neocomplcache_keyword_patterns = {}
@@ -347,7 +354,7 @@ inoremap <expr><C-e>  neocomplcache#cancel_popup()
 
 " Enable omni completion.
 autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
-autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
+autocmd FileType html setlocal omnifunc=htmlcomplete#CompleteTags
 autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
 autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
 autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
@@ -440,3 +447,15 @@ let g:vim_markdown_frontmatter=1
 
 " Add other file types in which quote syntax should be on.
 " let g:markdown_quote_syntax_on_filetypes = ['text']
+
+" vim-emoji
+silent! if emoji#available()
+  let g:gitgutter_sign_added = emoji#for('small_blue_diamond')
+  let g:gitgutter_sign_modified = emoji#for('small_orange_diamond')
+  let g:gitgutter_sign_removed = emoji#for('small_red_triangle')
+  let g:gitgutter_sign_modified_removed = emoji#for('collision')
+endif
+
+" github-complete
+let g:github_complete_emoji_japanese_workaround = 1
+autocmd FileType markdown,md setlocal omnifunc=github_complete#complete
