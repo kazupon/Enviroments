@@ -10,9 +10,30 @@ function init_antigen () {
     fi
 }
 
+function init_paths () {
+    for i in $HOME/homebrew; do
+        local bin_path="$i/bin"
+        if [ -d "$bin_path" ]; then
+            export PATH=$bin_path:$PATH
+        fi
+        local sbin_path="$i/sbin"
+        if [ -d "$sbin_path" ]; then
+            export PATH=$sbin_path:$PATH
+        fi
+        local man_path="$i/man"
+        if [ -d "$man_path" ]; then
+            export MANPATH=$man_path:$MANPATH
+        fi
+        local share_man_path="$i/share/man"
+        if [ -d "$share_man_path" ]; then
+            export MANPATH=$share_man_path:$MANPATH
+        fi
+    done
+}
+
 function init_aliases () {
-    alias ls='ls --color'
-    alias dir='dir --color'
+    alias ls='gls --color'
+    alias dir='gdir --color'
     alias ..='cd ..'
     alias ...='cd ../..'
     alias ....='cd ../../..'

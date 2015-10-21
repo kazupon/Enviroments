@@ -1,5 +1,5 @@
-if [[ -f "/usr/local/bin/virtualenvwrapper.sh" ]] ; then
+if [[ -f $HOME/homebrew/bin/virtualenvwrapper.sh ]]; then
     export VIRTUALENVWRAPPER_PYTHON=`which python`
     export WORKON_HOME=$HOME/.virtualenvs
-    source /usr/local/bin/virtualenvwrapper.sh
+    source $HOME/homebrew/bin/virtualenvwrapper.sh
 fi
