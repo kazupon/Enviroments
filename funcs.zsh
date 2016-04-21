@@ -6,6 +6,7 @@ function init_antigen () {
         antigen bundle Tarrasch/zsh-bd
         antigen bundle m4i/cdd
         antigen bundle mollifier/anyframe
+        antigen bundle b4b4r07/emoji-cli
         antigen apply
     fi
 }
