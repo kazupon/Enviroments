@@ -47,6 +47,7 @@ NeoBundle 'joker1007/vim-markdown-quote-syntax'
 NeoBundle 'plasticboy/vim-markdown'
 NeoBundle 'junegunn/vim-emoji'
 NeoBundle 'rhysd/github-complete.vim'
+NeoBundle 'othree/yajs.vim'
 
 filetype plugin indent on " Required!
 "
