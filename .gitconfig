@@ -1,6 +1,5 @@
-[user]
-	name = kazuya kawaguchi
-	email = kawakazu80@gmail.com
+[include]
+    path = ~/.enviroments/.gitconfig.local
 [color]
 	ui = auto
     diff = auto
@@ -34,3 +33,7 @@
 	editor = vim -c \"set fenc=utf-8\"
 [url "https://"]
 	insteadOf = git://
+[filter "lfs"]
+	clean = git-lfs clean %f
+	smudge = git-lfs smudge %f
+	required = true
