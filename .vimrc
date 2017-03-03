@@ -48,6 +48,11 @@ NeoBundle 'plasticboy/vim-markdown'
 NeoBundle 'junegunn/vim-emoji'
 NeoBundle 'rhysd/github-complete.vim'
 NeoBundle 'othree/yajs.vim'
+NeoBundleLazy 'flowtype/vim-flow', {
+            \ 'autoload': {
+            \     'filetypes': 'javascript'
+            \ }}
+
 
 filetype plugin indent on " Required!
 "
@@ -271,7 +276,7 @@ let g:syntastic_loc_list_height = 6
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
-let g:syntastic_javascript_checker = 'jshint'
+let g:syntastic_javascript_checker = 'eslint'
 let g:syntastic_mode_map = {
       \ 'mode': 'active',
       \ 'active_filetypes': ['ruby', 'javascript'],
