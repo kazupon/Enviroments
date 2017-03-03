@@ -465,3 +465,7 @@ endif
 " github-complete
 let g:github_complete_emoji_japanese_workaround = 1
 autocmd FileType markdown,md setlocal omnifunc=github_complete#complete
+
+" vim-flow
+let g:flow#enable = 1
+let g:flow#autoclose = 1
