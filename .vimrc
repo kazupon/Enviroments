@@ -19,7 +19,7 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 NeoBundle 'Shougo/vimproc'
 
 " my favoraite plugins
-NeoBundle 'molokai'
+" NeoBundle 'molokai'
 NeoBundle 'surround.vim'
 NeoBundle 'thinca/vim-quickrun'
 NeoBundle 'Lokaltog/vim-powerline'
@@ -227,7 +227,7 @@ au FileType go compiler go
 
 " molokai
 " colorscheme molokai
-let g:molokai_original=1
+" let g:molokai_original=1
 
 
 " quickrun
