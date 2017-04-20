@@ -48,6 +48,8 @@ NeoBundle 'plasticboy/vim-markdown'
 NeoBundle 'junegunn/vim-emoji'
 NeoBundle 'rhysd/github-complete.vim'
 NeoBundle 'othree/yajs.vim'
+NeoBundle 'posva/vim-vue'
+NeoBundle 'joshdick/onedark.vim'
 NeoBundleLazy 'flowtype/vim-flow', {
             \ 'autoload': {
             \     'filetypes': 'javascript'
@@ -209,7 +211,7 @@ au Filetype stylus set tabstop=2
 au FileType stylus set shiftwidth=2
 
 " vue
-au BufRead,BufNewFile *.vue set filetype=html
+"au BufRead,BufNewFile *.vue set filetype=html
 au Filetype vue set tabstop=2
 au FileType vue set shiftwidth=2
 
@@ -224,7 +226,7 @@ au FileType go compiler go
 " -----------------------------------------------------------------------------
 
 " molokai
-colorscheme molokai
+" colorscheme molokai
 let g:molokai_original=1
 
 
@@ -467,5 +469,9 @@ let g:github_complete_emoji_japanese_workaround = 1
 autocmd FileType markdown,md setlocal omnifunc=github_complete#complete
 
 " vim-flow
-let g:flow#enable = 1
-let g:flow#autoclose = 1
+let g:flow#enable = 0
+let g:flow#autoclose = 0
+
+" onedark.vim
+colorscheme onedark
+let g:onedark_termcolors=256
