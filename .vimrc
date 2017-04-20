@@ -22,7 +22,7 @@ NeoBundle 'Shougo/vimproc'
 " NeoBundle 'molokai'
 NeoBundle 'surround.vim'
 NeoBundle 'thinca/vim-quickrun'
-NeoBundle 'Lokaltog/vim-powerline'
+"NeoBundle 'Lokaltog/vim-powerline'
 NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'airblade/vim-gitgutter'
 NeoBundle 'open-browser.vim'
@@ -249,9 +249,9 @@ let g:quickrun_config.lua = { 'command': 'lua' }
 
 
 " powerline
-set guifont=Monaco-Powerline:h11
-set guifontwide=Monaco-Powerline:h11
-let g:Powerline_symbols='fancy'
+"set guifont=Monaco-Powerline:h11
+"set guifontwide=Monaco-Powerline:h11
+"let g:Powerline_symbols='fancy'
 "let g:Powerline_colorscheme='skwp'
 
 
