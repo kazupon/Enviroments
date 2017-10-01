@@ -163,15 +163,8 @@ au FileType css set shiftwidth=2
 au FileType less set tabstop=2
 au FileType less set shiftwidth=2
 
-" arduino
-au BufNewFile,BufRead *.pde set filetype=arduino
-au BufNewFile,BufRead *.ino set filetype=arduino
-au Filetype arduino set tabstop=2
-au FileType arduino set shiftwidth=2
-
-" processing
-au Filetype pde set tabstop=2
-au FileType pde set shiftwidth=2
+" ejs
+au BufNewFile,BufRead *.ejs set filetype=html
 
 " json
 au BufRead,BufNewFile *.json set filetype=json
