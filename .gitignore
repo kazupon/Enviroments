@@ -1,6 +1,10 @@
 .DS_Store
 ~.swp
 *~
+.vim/bundles/cache_vim
+.vim/bundles/state_vim
+.vim/bundles/repos
+.vim/bundles/.cache
 tags
 tags-*
 .netrwhist
