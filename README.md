@@ -11,7 +11,7 @@ This repository includes configration files, scripts and tiny commands for our d
 $ curl -L https://github.com/Homebrew/brew/tarball/master | tar xz --strip 1 -C homebrew   
 
 # and other ...
-$ brew install coreutils git curl wget zsh openssl peco htop vim tig jq emojify
+$ brew install coreutils git curl wget zsh openssl peco htop vim --with-lua tig jq emojify
 ```
 
 
