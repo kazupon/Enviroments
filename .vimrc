@@ -1,74 +1,68 @@
-set nocompatible " Be iMproved
-
-" go
-let g:gofmt_command = 'goimports'
-set rtp^=${GOROOT}/misc/vim
-set rtp^=${GOPATH}/src/github.com/nsf/gocode/vim
-
-if has('vim_starting')
-  set runtimepath+=~/.vim/bundle/neobundle.vim/
+if &compatible
+  set nocompatible               " Be iMproved
 endif
 
-call neobundle#rc(expand('~/.vim/bundle/'))
+" Required:
+set runtimepath+=/Users/kazupon/.vim/bundles/repos/github.com/Shougo/dein.vim
 
-" Let NeoBundle manage NeoBundle
-NeoBundleFetch 'Shougo/neobundle.vim'
+" Required:
+if dein#load_state('/Users/kazupon/.vim/bundles')
+  call dein#begin('/Users/kazupon/.vim/bundles')
 
-" Recommended to install
-" After install, turn shell ~/.vim/bundle/vimproc, (n,g)make -f your_machines_makefile
-NeoBundle 'Shougo/vimproc'
+  " Let dein manage dein
+  " Required:
+  call dein#add('/Users/kazupon/.vim/bundles/repos/github.com/Shougo/dein.vim')
 
-" my favoraite plugins
-" NeoBundle 'molokai'
-NeoBundle 'surround.vim'
-NeoBundle 'thinca/vim-quickrun'
-"NeoBundle 'Lokaltog/vim-powerline'
-NeoBundle 'vim-airline/vim-airline'
-NeoBundle 'vim-airline/vim-airline-themes'
-NeoBundle 'tpope/vim-fugitive'
-NeoBundle 'airblade/vim-gitgutter'
-NeoBundle 'open-browser.vim'
-NeoBundle 'jade.vim'
-NeoBundle 'JSON.vim'
-NeoBundle 'groenewege/vim-less'
-NeoBundle 'wavded/vim-stylus'
-NeoBundle 'taglist.vim'
-NeoBundle 'scrooloose/syntastic'
-NeoBundle 'scrooloose/nerdtree'
-NeoBundle 'Shougo/neocomplcache'
-NeoBundle 'Shougo/neosnippet'
-NeoBundle 'Shougo/neosnippet-snippets'
-NeoBundle 'tpope/vim-rails'
-NeoBundle 'kana/vim-smartinput'
-NeoBundle 'ekalinin/Dockerfile.vim'
-NeoBundle 'deris/vim-kobito'
-NeoBundle 'nono/vim-handlebars'
-NeoBundle 'briancollins/vim-jst'
-NeoBundle 'godlygeek/tabular'
-NeoBundle 'joker1007/vim-markdown-quote-syntax'
-NeoBundle 'plasticboy/vim-markdown'
-NeoBundle 'junegunn/vim-emoji'
-NeoBundle 'rhysd/github-complete.vim'
-NeoBundle 'othree/yajs.vim'
-NeoBundle 'posva/vim-vue'
-NeoBundle 'joshdick/onedark.vim'
-NeoBundleLazy 'flowtype/vim-flow', {
-            \ 'autoload': {
-            \     'filetypes': 'javascript'
-            \ }}
+  " Add or remove your plugins here:
+  call dein#add('Shougo/neocomplete')
+  call dein#add('Shougo/neosnippet.vim')
+  call dein#add('Shougo/neosnippet-snippets')
 
+  " call dein#add('molokai')
+  call dein#add('joshdick/onedark.vim')
+  " call dein#add('surround.vim')
+  call dein#add('thinca/vim-quickrun')
+  call dein#add('vim-airline/vim-airline')
+  call dein#add('vim-airline/vim-airline-themes')
+  call dein#add('tpope/vim-fugitive')
+  call dein#add('airblade/vim-gitgutter')
+  call dein#add('junegunn/vim-emoji')
+  call dein#add('posva/vim-vue')
+  call dein#add('rhysd/github-complete.vim')
+  " TODO: pick up from the belows:
+  " call dein#add('open-browser.vim')
+  " NeoBundle 'jade.vim'
+  " NeoBundle 'JSON.vim'
+  " NeoBundle 'groenewege/vim-less'
+  " NeoBundle 'wavded/vim-stylus'
+  " NeoBundle 'taglist.vim'
+  " NeoBundle 'scrooloose/syntastic'
+  " NeoBundle 'scrooloose/nerdtree'
+  " NeoBundle 'tpope/vim-rails'
+  " NeoBundle 'kana/vim-smartinput'
+  " NeoBundle 'ekalinin/Dockerfile.vim'
+  " NeoBundle 'deris/vim-kobito'
+  " NeoBundle 'nono/vim-handlebars'
+  " NeoBundle 'briancollins/vim-jst'
+  " NeoBundle 'godlygeek/tabular'
+  " NeoBundle 'othree/yajs.vim'
 
-filetype plugin indent on " Required!
-"
-" Brief help
-" :NeoBundleList          - list configured bundles
-" :NeoBundleInstall(!)    - install(update) bundles
-" :NeoBundleClean(!)      - confirm(or auto-approve) removal of unused bundles
+  " You can specify revision/branch/tag.
+  call dein#add('Shougo/vimshell', { 'rev': '3787e5' })
 
-" Installation check.
-NeoBundleCheck
+  " Required:
+  call dein#end()
+  call dein#save_state()
+endif
+
+" If you want to install not installed plugins on startup.
+if dein#check_install()
+  call dein#install()
+endif
 
 
+" Required:
+filetype plugin indent on
 syntax enable
 
 " setting edit options
@@ -128,21 +122,6 @@ highlight CursorLine ctermbg=black guibg=black
 set cursorline
 
 " filetype settings
-
-" java
-"au FileType java set makeprg=vimAnt
-"au FileType java set efm=\ %#[javac]\ %#%f:%l:%c:%*\\d:%*\\d:\ %t%[%^:]%#:%m,\%A\ %#[javac]\ %f:%l:\ %m,%-Z\ %#[javac]\ %p^,%-C%.%#
-"au FileType java :set efm=%A\ %#[javac]\ %f:%l:\ %m,%-Z\ %#[javac]\ %p^,%-C%.%#
-":let java_highlight_all=1
-:let java_highlight_functions=1
-":let java_highlight_debug=1
-au Filetype java set tags+=~/.tags/java6
-au FileType java set tags+=~/.tags/android
-"function! CompileJava()
-"    :make
-"    :cw
-"endfunction
-"au FileType java nmap <F5> :call CompileJava()<CR>
 
 " c
 au FileType c set tabstop=2
@@ -222,17 +201,15 @@ au BufWritePre *.go Fmt
 au BufNewFile,BufRead *.go set sw=4 noexpandtab ts=4
 au FileType go compiler go
 
-
 " -----------------------------------------------------------------------------
 " Plugin options
 " -----------------------------------------------------------------------------
 
-" molokai
-" colorscheme molokai
-" let g:molokai_original=1
+" joshdick/onedark
+colorscheme onedark
+let g:onedark_termcolors=256
 
-
-" quickrun
+" thinca/quickrun
 let g:quickrun_config = {}
 let g:quickrun_config.javascript = { 'command': 'node' }
 "let g:quickrun_config.markdown = {
@@ -249,12 +226,6 @@ let g:quickrun_config.markdown = {
     \ }
 let g:quickrun_config.lua = { 'command': 'lua' }
 
-
-" powerline
-"set guifont=Monaco-Powerline:h11
-"set guifontwide=Monaco-Powerline:h11
-"let g:Powerline_symbols='fancy'
-"let g:Powerline_colorscheme='default'
 
 " vim-airline
 let g:airline_powerline_fonts = 1
@@ -283,8 +254,7 @@ let g:airline_symbols.spell = 'Ꞩ'
 let g:airline_symbols.notexists = '∄'
 let g:airline_symbols.whitespace = 'Ξ'
 
-
-"vim-fugitive'
+" vim-fugitive'
 nnoremap gst :<C-u>Gstatus<CR>
 nnoremap gwr :<C-u>Gwrite<CR>
 nnoremap gre :<C-u>Gread<CR>
@@ -292,215 +262,139 @@ nnoremap gcm :<C-u>Gcommit<CR>
 nnoremap gdf :<C-u>Gdiff<CR>
 nnoremap gbl :<C-u>Gblame<CR>
 
-
 "vim-gitgutter
 "let g:gitgutter_enabled = 0
 "let g:gitgutter_highlights = 1
 highlight clear SignColumn
 
-
-" vim-syntatic
-let g:syntastic_check_on_open = 0
-let g:syntastic_check_on_save = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_loc_list_height = 6
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-let g:syntastic_javascript_checker = 'eslint'
-let g:syntastic_mode_map = {
-      \ 'mode': 'active',
-      \ 'active_filetypes': ['ruby', 'javascript'],
-      \ 'passive_filetypes': []
-      \ }
-"let g:syntastic_enable_signs=1
-"let g:syntastic_error_symbol='✗'
-"let g:syntastic_warning_symbol='⚠'
-nnoremap ,sc :<C-u>SyntasticCheck<CR>
-
-
-" neocomplcache settings
-
+"
+" Shougo/neocomplete
+"
+"Note: This option must be set in .vimrc(_vimrc).  NOT IN .gvimrc(_gvimrc)!
 " Disable AutoComplPop.
 let g:acp_enableAtStartup = 0
-" Use neocomplcache.
-let g:neocomplcache_enable_at_startup = 1
+" Use neocomplete.
+let g:neocomplete#enable_at_startup = 1
 " Use smartcase.
-let g:neocomplcache_enable_smart_case = 1
-" Use camel case completion.
-let g:neocomplcache_enable_camel_case_completion = 1
-" Use underbar completion.
-let g:neocomplcache_enable_underbar_completion = 1
+let g:neocomplete#enable_smart_case = 1
 " Set minimum syntax keyword length.
-let g:neocomplcache_min_syntax_length = 5
-let g:neocomplcache_lock_buffer_name_pattern = '\*ku\*'
+let g:neocomplete#sources#syntax#min_keyword_length = 3
 
 " Define dictionary.
-let g:neocomplcache_dictionary_filetype_lists = {
+let g:neocomplete#sources#dictionary#dictionaries = {
     \ 'default' : '',
     \ 'vimshell' : $HOME.'/.vimshell_hist',
     \ 'scheme' : $HOME.'/.gosh_completions'
-    \ }
+        \ }
 
 " Define keyword.
-if !exists('g:neocomplcache_keyword_patterns')
-    let g:neocomplcache_keyword_patterns = {}
+if !exists('g:neocomplete#keyword_patterns')
+    let g:neocomplete#keyword_patterns = {}
 endif
-let g:neocomplcache_keyword_patterns['default'] = '\h\w*'
+let g:neocomplete#keyword_patterns['default'] = '\h\w*'
 
 " Plugin key-mappings.
-inoremap <expr><C-g>     neocomplcache#undo_completion()
-inoremap <expr><C-l>     neocomplcache#complete_common_string()
+inoremap <expr><C-g>     neocomplete#undo_completion()
+inoremap <expr><C-l>     neocomplete#complete_common_string()
 
 " Recommended key-mappings.
 " <CR>: close popup and save indent.
 inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
 function! s:my_cr_function()
-  return neocomplcache#smart_close_popup() . "\<CR>"
+  return (pumvisible() ? "\<C-y>" : "" ) . "\<CR>"
   " For no inserting <CR> key.
-  "return pumvisible() ? neocomplcache#close_popup() : "\<CR>"
+  "return pumvisible() ? "\<C-y>" : "\<CR>"
 endfunction
 " <TAB>: completion.
 inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 " <C-h>, <BS>: close popup and delete backword char.
-inoremap <expr><C-h> neocomplcache#smart_close_popup()."\<C-h>"
-inoremap <expr><BS> neocomplcache#smart_close_popup()."\<C-h>"
-inoremap <expr><C-y>  neocomplcache#close_popup()
-inoremap <expr><C-e>  neocomplcache#cancel_popup()
+inoremap <expr><C-h> neocomplete#smart_close_popup()."\<C-h>"
+inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
 " Close popup by <Space>.
-"inoremap <expr><Space> pumvisible() ? neocomplcache#close_popup() : "\<Space>"
-
-" For cursor moving in insert mode(Not recommended)
-"inoremap <expr><Left>  neocomplcache#close_popup() . "\<Left>"
-"inoremap <expr><Right> neocomplcache#close_popup() . "\<Right>"
-"inoremap <expr><Up>    neocomplcache#close_popup() . "\<Up>"
-"inoremap <expr><Down>  neocomplcache#close_popup() . "\<Down>"
-" Or set this.
-"let g:neocomplcache_enable_cursor_hold_i = 1
-" Or set this.
-"let g:neocomplcache_enable_insert_char_pre = 1
+"inoremap <expr><Space> pumvisible() ? "\<C-y>" : "\<Space>"
 
 " AutoComplPop like behavior.
-"let g:neocomplcache_enable_auto_select = 1
-
+"let g:neocomplete#enable_auto_select = 1
 " Shell like behavior(not recommended).
 "set completeopt+=longest
-"let g:neocomplcache_enable_auto_select = 1
-"let g:neocomplcache_disable_auto_complete = 1
+"let g:neocomplete#enable_auto_select = 1
+"let g:neocomplete#disable_auto_complete = 1
 "inoremap <expr><TAB>  pumvisible() ? "\<Down>" : "\<C-x>\<C-u>"
 
 " Enable omni completion.
 autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
-autocmd FileType html setlocal omnifunc=htmlcomplete#CompleteTags
+autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
 autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
 autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
 autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 
 " Enable heavy omni completion.
-if !exists('g:neocomplcache_omni_patterns')
-  let g:neocomplcache_omni_patterns = {}
+if !exists('g:neocomplete#sources#omni#input_patterns')
+  let g:neocomplete#sources#omni#input_patterns = {}
 endif
-if !exists('g:neocomplcache_force_omni_patterns')
-  let g:neocomplcache_force_omni_patterns = {}
-endif
-let g:neocomplcache_omni_patterns.php = '[^. \t]->\%(\h\w*\)\?\|\h\w*::\%(\h\w*\)\?'
-let g:neocomplcache_omni_patterns.c = '[^.[:digit:] *\t]\%(\.\|->\)\%(\h\w*\)\?'
-let g:neocomplcache_omni_patterns.cpp = '[^.[:digit:] *\t]\%(\.\|->\)\%(\h\w*\)\?\|\h\w*::\%(\h\w*\)\?'
+"let g:neocomplete#sources#omni#input_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
+"let g:neocomplete#sources#omni#input_patterns.c = '[^.[:digit:] *\t]\%(\.\|->\)'
+"let g:neocomplete#sources#omni#input_patterns.cpp = '[^.[:digit:] *\t]\%(\.\|->\)\|\h\w*::'
 
 " For perlomni.vim setting.
 " https://github.com/c9s/perlomni.vim
-let g:neocomplcache_omni_patterns.perl = '[^. \t]->\%(\h\w*\)\?\|\h\w*::\%(\h\w*\)\?'
+let g:neocomplete#sources#omni#input_patterns.perl = '\h\w*->\h\w*\|\h\w*::'
 
-
-" neosnippet
-
+"
+" Shougo/neosnippet.vim
+"
 " Plugin key-mappings.
+" Note: It must be "imap" and "smap".  It uses <Plug> mappings.
 imap <C-k>     <Plug>(neosnippet_expand_or_jump)
 smap <C-k>     <Plug>(neosnippet_expand_or_jump)
 xmap <C-k>     <Plug>(neosnippet_expand_target)
-xmap <C-l>     <Plug>(neosnippet_start_unite_snippet_target)
 
 " SuperTab like snippets behavior.
-imap <expr><TAB> neosnippet#expandable_or_jumpable() ?
- \ "\<Plug>(neosnippet_expand_or_jump)"
- \: pumvisible() ? "\<C-n>" : "\<TAB>"
+" Note: It must be "imap" and "smap".  It uses <Plug> mappings.
+imap <C-k>     <Plug>(neosnippet_expand_or_jump)
+"imap <expr><TAB>
+" \ pumvisible() ? "\<C-n>" :
+" \ neosnippet#expandable_or_jumpable() ?
+" \    "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
 smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
- \ "\<Plug>(neosnippet_expand_or_jump)"
- \: "\<TAB>"
+\ "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
 
-" For snippet_complete marker.
+" For conceal markers.
 if has('conceal')
-    set conceallevel=2 concealcursor=i
+  set conceallevel=2 concealcursor=niv
 endif
 
-" Enable snipMate compatibility feature.
-" let g:neosnippet#enable_snipmate_compatibility = 1
-
-" vim-markdown extension
-" site: https://github.com/plasticboy/vim-markdown
-" command: https://github.com/plasticboy/vim-markdown#commands
-" let g:vim_markdown_folding_disabled=1
-" set [no]foldenable
-" let g:vim_markdown_no_default_key_mappings=1
-let g:vim_markdown_math=1
-let g:vim_markdown_frontmatter=1
-
-" vim-markdown-quote-syntax
-" site: https://github.com/joker1007/vim-markdown-quote-syntax
-" Add syntax rule
-"let g:markdown_quote_syntax_filetypes = {
-"        \ "coffee" : {
-"        \   "start" : "coffee",
-"        \},
-"        \ "css" : {
-"        \   "start" : "\\%(css\\|scss\\)",
-"        \},
-"        \ "mustache" : {
-"        \   "start" : "mustache",
-"        \},
-"        \ "haml" : {
-"        \   "start" : "haml",
-"        \}
-"  \}
-
-" 'start' and 'end' is vim regular expression.
-" need to care backslash.
-
-" Add code blocks
-"let g:markdown_quote_syntax_codeblocks = {
-"        \["^\\s*{% *highlight \\+", "\\( .*%\\|%\\)}",
-"          \"^\\s*{% *endhighlight\\( .*%\\|%\\)}"]
-"  \}
-
-" Each codeblock is defined as:
-"
-"    'codeblock[0].filetype.codeblock[1]<code lines>codeblock[2]'
-"
-" Above example is for the liquid highlight tag. (It is already included by default.)
-"    {% highlight vim %}
-"    any codes
-"    ...
-"    {% endhighlight %}
-
-" Add other file types in which quote syntax should be on.
-" let g:markdown_quote_syntax_on_filetypes = ['text']
-
-" vim-emoji
+" junegunn/vim-emoji
 silent! if emoji#available()
   let g:gitgutter_sign_added = emoji#for('small_blue_diamond')
   let g:gitgutter_sign_modified = emoji#for('small_orange_diamond')
   let g:gitgutter_sign_removed = emoji#for('small_red_triangle')
   let g:gitgutter_sign_modified_removed = emoji#for('collision')
 endif
+"set completefunc=emoji#complete
 
-" github-complete
+" rhysd/github-complete.vim
 let g:github_complete_emoji_japanese_workaround = 1
 autocmd FileType markdown,md setlocal omnifunc=github_complete#complete
 
-" vim-flow
-let g:flow#enable = 0
-let g:flow#autoclose = 0
 
-" onedark.vim
-colorscheme onedark
-let g:onedark_termcolors=256
+"
+" " vim-syntatic
+" let g:syntastic_check_on_open = 0
+" let g:syntastic_check_on_save = 1
+" let g:syntastic_auto_loc_list = 1
+" let g:syntastic_loc_list_height = 6
+" set statusline+=%#warningmsg#
+" set statusline+=%{SyntasticStatuslineFlag()}
+" set statusline+=%*
+" let g:syntastic_javascript_checker = 'eslint'
+" let g:syntastic_mode_map = {
+"       \ 'mode': 'active',
+"       \ 'active_filetypes': ['ruby', 'javascript'],
+"       \ 'passive_filetypes': []
+"       \ }
+" "let g:syntastic_enable_signs=1
+" "let g:syntastic_error_symbol='✗'
+" "let g:syntastic_warning_symbol='⚠'
+" nnoremap ,sc :<C-u>SyntasticCheck<CR>
+"
