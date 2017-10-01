@@ -2,29 +2,66 @@
 This repository includes configration files, scripts and tiny commands for our daily life, especially for myself.
 
 
+## Prepare
 
-# Prepare
-
-## Install homebrew & homebrew packages
+### Install homebrew & homebrew packages
 
 ```sh
 # homebrew
-$ ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-
-# coreutils
-$ brew install coreutils
-
-# peco
-$ brew tag peco/peco
-$ brew install peco
+$ curl -L https://github.com/Homebrew/brew/tarball/master | tar xz --strip 1 -C homebrew   
 
 # and other ...
-$ brew install git curl wget zsh htop vim tig jq lua luajit
+$ brew install coreutils git curl wget zsh peco htop vim tig lua luajit
+```
+
+
+## Install
+
+```sh
+$ cd ~/.enviroments
+$ ./setup.sh
+```
+
+### Submodule
+
+```sh
+$ git clone git@github.com:kazupon/Enviroments.git ~/.enviroments
+$ cd ~/.enviroments
+$ git submodule init
+$ git submodule update
+```
+
+## Uninstall
+you can remove all symlinks to the configuration files located in ~/.
+
+```sh
+$ cd ~/.enviroments
+$ ~/.enviroments/setup.sh uninstall
+```
+
+## Custom fonts installation
+
+#### Download and Install the xquartz
+
+[https://xquartz.macosforge.org](https://xquartz.macosforge.org)
+
+#### build powerline font
+
+```sh
+$ brew install fontforge --with-python
+$ cd ~/.enviroments/.vim/bundle/vim-powerline/fontpatcher
+$ fontforge -script ./fontpatcher ~/Library/Fonts/<user font>
 ```
 
 
 ## iTerm2
 Import the `config/iterm2.itermcolors` profile
+
+### iTerm2 setting
+Set the following setting with *[Preferences]*
+
+- Select powerline font at [Text] -> Reguar Font & Non-ASCII Font section
+- Select xterm-256color at [Terminal] -> Terminal Emulation section
 
 
 ## Powerline
@@ -45,52 +82,6 @@ $ patch powerline-shell.py.template < ../../powerline-shell.py.template.patch
 
 # install powerline-shell.py
 $ ./install.py 
-```
-
-### iTerm2 setting
-Set the following setting with *[Preferences]*
-
-- Select powerline font at [Text] -> Reguar Font & Non-ASCII Font section
-- Select xterm-256color at [Terminal] -> Terminal Emulation section
-
-
-### Custom font usecase
-
-#### Download and Install the xquartz
-
-[https://xquartz.macosforge.org](https://xquartz.macosforge.org)
-
-#### build powerline font
-
-```sh
-$ brew install fontforge --with-python
-$ cd ~/.enviroments/.vim/bundle/vim-powerline/fontpatcher
-$ fontforge -script ./fontpatcher ~/Library/Fonts/<user font>
-```
-
-
-# Install
-
-```sh
-$ cd ~/.enviroments
-$ ./setup.sh
-```
-
-## Submodule
-
-```sh
-$ git clone git@github.com:kazupon/Enviroments.git ~/.enviroments
-$ cd ~/.enviroments
-$ git submodule init
-$ git submodule update
-```
-
-# Uninstall
-you can remove all symlinks to the configuration files located in ~/.
-
-```sh
-$ cd ~/.enviroments
-$ ~/.enviroments/setup.sh uninstall
 ```
 
 
