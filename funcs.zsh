@@ -57,6 +57,10 @@ function init_aliases () {
 }
 
 function init_base_zshrc () {
+    # git compliton
+    # http://qiita.com/ryomits/items/8abbcc683457b5e9ca34
+    fpath=($(brew --prefix)/share/zsh/site-functions $fpath)
+
     export LANG=ja_JP.UTF-8
     export DISPLAY=:0.0
     export __CF_USER_TEXT_ENCODING="0x1F5:0x08000100:14"
