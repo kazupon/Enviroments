@@ -82,8 +82,6 @@ function init_base_zshrc () {
     setopt no_beep
 
     setopt extended_glob
-
-    bindkey "$EMOJI_CLI_KEYBIND" emoji::cli # force apply for screen
 }
 
 function load_sub_zshrc () {
