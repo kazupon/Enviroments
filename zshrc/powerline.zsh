@@ -1,5 +1,6 @@
 function powerline_precmd () {
-    export PS1="$(~/.enviroments/powerline/shell/powerline-shell.py $? --shell zsh 2> /dev/null)"
+    PS1="$(~/.enviroments/powerline/shell/powerline-shell.py $? --shell zsh 2> /dev/null)"
+    #export PS1="$(~/.enviroments/powerline/shell/powerline-shell.py --shell zsh $?)"
 }
 
 function install_powerline_precmd () {
