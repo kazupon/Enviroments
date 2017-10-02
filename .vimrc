@@ -20,13 +20,13 @@ if dein#load_state('/Users/kazupon/.vim/bundles')
 
   " call dein#add('molokai')
   call dein#add('joshdick/onedark.vim')
-  " call dein#add('surround.vim')
   call dein#add('thinca/vim-quickrun')
   call dein#add('vim-airline/vim-airline')
   call dein#add('vim-airline/vim-airline-themes')
   call dein#add('tpope/vim-fugitive')
   call dein#add('airblade/vim-gitgutter')
-  "call dein#add('junegunn/vim-emoji')
+  call dein#add('tpope/vim-surround')
+  call dein#add('kana/vim-smartinput')
   call dein#add('posva/vim-vue')
   call dein#add('rhysd/github-complete.vim')
   " TODO: pick up from the belows:
@@ -39,7 +39,6 @@ if dein#load_state('/Users/kazupon/.vim/bundles')
   " NeoBundle 'scrooloose/syntastic'
   " NeoBundle 'scrooloose/nerdtree'
   " NeoBundle 'tpope/vim-rails'
-  " NeoBundle 'kana/vim-smartinput'
   " NeoBundle 'ekalinin/Dockerfile.vim'
   " NeoBundle 'deris/vim-kobito'
   " NeoBundle 'nono/vim-handlebars'
