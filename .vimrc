@@ -26,7 +26,7 @@ if dein#load_state('/Users/kazupon/.vim/bundles')
   call dein#add('vim-airline/vim-airline-themes')
   call dein#add('tpope/vim-fugitive')
   call dein#add('airblade/vim-gitgutter')
-  call dein#add('junegunn/vim-emoji')
+  "call dein#add('junegunn/vim-emoji')
   call dein#add('posva/vim-vue')
   call dein#add('rhysd/github-complete.vim')
   " TODO: pick up from the belows:
@@ -356,15 +356,6 @@ smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
 if has('conceal')
   set conceallevel=2 concealcursor=niv
 endif
-
-" junegunn/vim-emoji
-silent! if emoji#available()
-  let g:gitgutter_sign_added = emoji#for('small_blue_diamond')
-  let g:gitgutter_sign_modified = emoji#for('small_orange_diamond')
-  let g:gitgutter_sign_removed = emoji#for('small_red_triangle')
-  let g:gitgutter_sign_modified_removed = emoji#for('collision')
-endif
-"set completefunc=emoji#complete
 
 " rhysd/github-complete.vim
 let g:github_complete_emoji_japanese_workaround = 1
