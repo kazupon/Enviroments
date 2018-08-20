@@ -81,10 +81,8 @@ $ cd ~/.enviroments/powerline/shell
 $ python setup.py install
 ```
 
-
 # TODO
 - Ansible & Docker setup
-
 
 # License
 [MIT license](http://www.opensource.org/licenses/mit-license.php).
