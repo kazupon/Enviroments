@@ -77,11 +77,8 @@ $ ./install.sh
 
 $ cd ~/.enviroments/powerline/shell
 
-# for old powerline font using case (option)
-$ patch powerline-shell.py.template < ../../powerline-shell.py.template.patch 
-
 # install powerline-shell.py
-$ ./install.py 
+$ python setup.py install
 ```
 
 

@@ -1,19 +1,16 @@
 function powerline_precmd () {
-    PS1="$(~/.enviroments/powerline/shell/powerline-shell.py $? --shell zsh 2> /dev/null)"
-    #export PS1="$(~/.enviroments/powerline/shell/powerline-shell.py --shell zsh $?)"
+    PS1="$(powerline-shell --shell zsh $?)"
 }
 
 function install_powerline_precmd () {
-    if [[ -d "$HOME/.enviroments/powerline" ]]; then
-        if [[ -f "$HOME/.enviroments/powerline/shell/powerline-shell.py" ]]; then
-            for s in "${precmd_functions[@]}"; do
-                if [ "$s" = "powerline_precmd" ]; then
-                    return
-                fi
-            done
-            precmd_functions+=(powerline_precmd)
+    for s in "${precmd_functions[@]}"; do
+        if [ "$s" = "powerline_precmd" ]; then
+            return
         fi
-    fi
+    done
+  	precmd_functions+=(powerline_precmd)
 }
 
-install_powerline_precmd
+if [ "$TERM" != "linux" ]; then
+    install_powerline_precmd
+fi
