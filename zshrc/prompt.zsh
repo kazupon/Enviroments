@@ -1,2 +1,1 @@
 propmpt="%n@%m:%~ %#"
-#rprompt=""

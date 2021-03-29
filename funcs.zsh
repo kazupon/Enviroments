@@ -1,18 +1,5 @@
-function init_antigen () {
-    if [[ -f $HOME/.zsh/antigen/antigen.zsh ]]; then
-        source $HOME/.zsh/antigen/antigen.zsh
-        antigen bundle zsh-users/zsh-syntax-highlighting
-        antigen bundle zsh-users/zsh-completions src
-        antigen bundle Tarrasch/zsh-bd
-        antigen bundle m4i/cdd
-        antigen bundle mollifier/anyframe
-        antigen bundle b4b4r07/emoji-cli
-        antigen apply
-    fi
-}
-
 function init_paths () {
-    for i in $HOME/homebrew; do
+    for i in $HOME/Homebrew; do
         local bin_path="$i/bin"
         if [ -d "$bin_path" ]; then
             export PATH=$bin_path:$PATH
@@ -44,8 +31,6 @@ function init_aliases () {
     alias grep='grep --color'
     alias egrep='egrep --color'
     alias wget='wget --no-check-certificate'
-    alias js='node'
-    alias zmv='noglob zmv -W'
 
     alias -g L='| less'
     alias -g H='| head'
@@ -57,10 +42,6 @@ function init_aliases () {
 }
 
 function init_base_zshrc () {
-    # git compliton
-    # http://qiita.com/ryomits/items/8abbcc683457b5e9ca34
-    fpath=($(brew --prefix)/share/zsh/site-functions $fpath)
-
     export LANG=ja_JP.UTF-8
     export DISPLAY=:0.0
     export __CF_USER_TEXT_ENCODING="0x1F5:0x08000100:14"
@@ -68,9 +49,12 @@ function init_base_zshrc () {
     export LESSEDIT='vi %f'
     export LESS='-R'
 
-    bindkey -e
-    autoload -Uz compinit
-    compinit
+    export ZSH_HIGHLIGHT_HIGHLIGHTERS_DIR=$(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+    if type brew &>/dev/null; then
+        fpath=($(brew --prefix)/share/zsh-completions $fpath)
+        autoload -Uz compinit
+        compinit
+    fi
 
     # not exit zsh with ^D
     setopt ignore_eof
@@ -83,7 +67,7 @@ function init_base_zshrc () {
 
     setopt extended_glob
 
-    bindkey "$EMOJI_CLI_KEYBIND" emoji::cli # force apply for screen
+    # bindkey "$EMOJI_CLI_KEYBIND" emoji::cli # force apply for screen
 }
 
 function load_sub_zshrc () {

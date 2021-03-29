@@ -1,1 +1,0 @@
-export JSTESTDRIVER_HOME=$PATH

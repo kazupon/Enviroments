@@ -3,7 +3,7 @@ if [ -d "$HOME/bin" ] ; then
 fi
 
 
-for i in /usr/local $HOME/opt/local $HOME/homebrew; do
+for i in /usr/local $HOME/Homebrew; do
     local bin_path="$i/bin"
     if [ -d "$bin_path" ]; then
         export PATH=$bin_path:$PATH

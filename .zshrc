@@ -7,8 +7,6 @@ fi
 
 source "${profiles}/funcs.zsh"
 
-init_antigen
-
 init_paths
 
 init_aliases
