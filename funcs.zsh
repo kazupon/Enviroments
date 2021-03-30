@@ -49,7 +49,7 @@ function init_base_zshrc () {
     export LESSEDIT='vi %f'
     export LESS='-R'
 
-    export ZSH_HIGHLIGHT_HIGHLIGHTERS_DIR=$(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+    source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
     if type brew &>/dev/null; then
         fpath=($(brew --prefix)/share/zsh-completions $fpath)
         autoload -Uz compinit
