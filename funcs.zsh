@@ -20,25 +20,24 @@ function init_paths () {
 }
 
 function init_aliases () {
-    alias ls='gls --color'
-    alias dir='gdir --color'
-    alias ..='cd ..'
-    alias ...='cd ../..'
-    alias ....='cd ../../..'
-    alias cp='cp -a'
-    alias rm='rm -i'
-    alias mkdir='mkdir -p'
-    alias grep='grep --color'
-    alias egrep='egrep --color'
-    alias wget='wget --no-check-certificate'
-
-    alias -g L='| less'
-    alias -g H='| head'
-    alias -g T='| tail'
-    alias -g G='| grep'
-    alias -g N='> /dev/null'
-    alias -g V='| vim -R -'
-    alias -g P=' --help | less'
+    alias ls="gls --color"
+    alias dir="gdir --color"
+    alias ..="cd .."
+    alias ...="cd ../.."
+    alias ....="cd ../../.."
+    alias cp="cp -a"
+    alias rm="rm -i"
+    alias mkdir="mkdir -p"
+    alias grep="grep --color"
+    alias egrep="egrep --color"
+    alias wget="wget --no-check-certificate"
+    # alias -g L="| less"
+    # alias -g H="| head"
+    # alias -g T="| tail"
+    # alias -g G="| grep"
+    # alias -g N="> /dev/null"
+    # alias -g V="| vim -R -"
+    # alias -g P=" --help | less"
 }
 
 function init_base_zshrc () {

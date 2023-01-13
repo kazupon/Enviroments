@@ -1,7 +1,7 @@
 [include]
     path = ~/.enviroments/.gitconfig.local
 [color]
-	ui = auto
+    ui = auto
     diff = auto
     status = auto
     branch = auto
