@@ -27,12 +27,25 @@ function init_base_zshrc () {
     export LESSEDIT='vi %f'
     export LESS='-R'
 
+    # load zsh-syntax-highlighting
     source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+    # load zsh completions if installed by brew
     if type brew &>/dev/null; then
         fpath=($(brew --prefix)/share/zsh-completions $fpath)
-        autoload -Uz compinit
-        compinit
     fi
+
+    # create completion directory, if not exists
+    mkdir -p "$HOME/.zsh-completions"
+
+    # load zsh completions if exists
+    if [ -n "$(ls -A "$HOME/.zsh-completions" 2>/dev/null)" ]; then
+        fpath=($HOME/.zsh-completions $fpath)
+    fi
+
+    # initialize zsh completions
+    autoload -Uz compinit
+    compinit
 
     # not exit zsh with ^D
     setopt ignore_eof
