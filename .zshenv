@@ -24,3 +24,9 @@ for i in /usr/local $HOME/Homebrew; do
         export MANPATH=$share_man_path:$MANPATH
     fi
 done
+
+for i in $HOME/man; do
+    if [ -d "$i" ]; then
+        export MANPATH=$i:$MANPATH
+    fi
+done

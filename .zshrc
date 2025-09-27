@@ -7,8 +7,6 @@ fi
 
 source "${profiles}/funcs.zsh"
 
-init_paths
-
 init_aliases
 
 init_base_zshrc
