@@ -17,6 +17,12 @@ function init_paths () {
             export MANPATH=$share_man_path:$MANPATH
         fi
     done
+
+    for i in $HOME/man; do
+        if [ -d "$i" ]; then
+            export MANPATH=$i:$MANPATH
+        fi
+    done
 }
 
 function init_aliases () {
