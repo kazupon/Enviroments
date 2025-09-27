@@ -31,6 +31,8 @@
     merge-reset = reset --hard ORIG_HEAD
     mr = reset --hard ORIG_HEAD
 [core]
+	autocrlf = input
+	whitespace = cr-at-eol
 	editor = vim -c \"set fenc=utf-8\"
 [url "https://"]
 	insteadOf = git://
