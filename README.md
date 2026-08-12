@@ -22,6 +22,22 @@ $ brew install rtk
 $ brew install yusukebe/tap/ax
 ```
 
+### Install development tools as needed
+
+Install these after the base setup when you need them. The zsh configuration
+loads them only when their local files are available or only adds their bin
+directories to `PATH`.
+
+- Vite+ (`zshrc/vite-plus.zsh`): loads `$HOME/.vite-plus/env`
+- mise (`zshrc/mise.zsh`): activates `$HOME/.local/bin/mise`
+- Rust / Cargo (`zshrc/cargo.zsh`): loads `$HOME/.cargo/env`
+- Bun (`zshrc/bun.zsh`): uses `$HOME/.bun`
+- pnpm (`zshrc/pnpm.zsh`): uses `$HOME/Library/pnpm`
+- Deno (`zshrc/deno.zsh`): uses `$HOME/.deno/bin`
+- MoonBit (`zshrc/moonbit.zsh`): uses `$HOME/.moon/bin`
+- pipx (`zshrc/pipx.zsh`): uses `$HOME/.local/bin`
+- Grok CLI (`zshrc/pre/grok.zsh`): uses `$HOME/.grok/bin`
+
 
 ## Install
 
