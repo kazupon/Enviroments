@@ -1,0 +1,18 @@
+theme = TokyoNight Night
+font-size = 14
+font-family = Osaka-等幅
+font-family = JetBrains Mono
+font-feature = -dlig
+font-thicken = true
+font-thicken-strength = 3
+window-padding-x = 10
+window-padding-y = 10
+window-padding-balance = true
+window-width  = 150
+window-height = 60
+working-directory = home
+window-inherit-working-directory = true
+window-save-state = always
+copy-on-select = clipboard
+keybind = global:f12=toggle_quick_terminal
+keybind = f10=toggle_fullscreen
