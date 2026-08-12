@@ -46,15 +46,6 @@ $ cd ~/.enviroments
 $ ./setup.sh
 ```
 
-### Submodule
-
-```sh
-$ git clone git@github.com:kazupon/Enviroments.git ~/.enviroments
-$ cd ~/.enviroments
-$ git submodule init
-$ git submodule update
-```
-
 ## Uninstall
 you can remove all symlinks to the configuration files located in ~/.
 
