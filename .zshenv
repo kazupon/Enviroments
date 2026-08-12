@@ -29,6 +29,3 @@ for i in $HOME/man; do
         export MANPATH=$i:$MANPATH
     fi
 done
-
-# Vite+ bin (https://viteplus.dev)
-. "$HOME/.vite-plus/env"
