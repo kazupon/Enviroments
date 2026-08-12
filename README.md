@@ -10,8 +10,16 @@ This repository includes configration files, scripts and tiny commands for our d
 # homebrew
 # Supported Homebrew prefixes by the official installer: /opt/homebrew, /usr/local
 $ /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-$ brew install coreutils git peco tig jq emojify
+$ brew install coreutils git peco tig jq
 $ brew install zsh-completions zsh-syntax-highlighting
+```
+
+### Install optional tools
+
+```sh
+$ brew install vim
+$ brew install rtk
+$ brew install yusukebe/tap/ax
 ```
 
 
