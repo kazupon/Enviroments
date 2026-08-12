@@ -27,12 +27,18 @@ function init_base_zshrc () {
     export LESSEDIT='vi %f'
     export LESS='-R'
 
-    # load zsh-syntax-highlighting
-    source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-
-    # load zsh completions if installed by brew
+    # load zsh integrations if installed by brew
     if type brew &>/dev/null; then
-        fpath=($(brew --prefix)/share/zsh-completions $fpath)
+        local brew_prefix
+        brew_prefix=$(brew --prefix)
+
+        if [ -r "$brew_prefix/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" ]; then
+            source "$brew_prefix/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
+        fi
+
+        if [ -d "$brew_prefix/share/zsh-completions" ]; then
+            fpath=($brew_prefix/share/zsh-completions $fpath)
+        fi
     fi
 
     # create completion directory, if not exists

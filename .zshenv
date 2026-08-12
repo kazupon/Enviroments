@@ -2,15 +2,21 @@ if [ -d "$HOME/bin" ] ; then
     PATH="$HOME/bin:$PATH"
 fi
 
-for i in /usr/local $HOME/Homebrew; do
+for i in /opt/homebrew /usr/local $HOME/Homebrew; do
     local bin_path="$i/bin"
     if [ -d "$bin_path" ]; then
-        export PATH=$bin_path:$PATH
+        case ":$PATH:" in
+            *":$bin_path:"*) ;;
+            *) export PATH=$bin_path:$PATH ;;
+        esac
     fi
 
     local sbin_path="$i/sbin"
     if [ -d "$sbin_path" ]; then
-        export PATH=$sbin_path:$PATH
+        case ":$PATH:" in
+            *":$sbin_path:"*) ;;
+            *) export PATH=$sbin_path:$PATH ;;
+        esac
     fi
 
     local man_path="$i/man"

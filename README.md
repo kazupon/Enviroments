@@ -8,6 +8,7 @@ This repository includes configration files, scripts and tiny commands for our d
 
 ```sh
 # homebrew
+# Supported Homebrew prefixes: /opt/homebrew, /usr/local, $HOME/Homebrew
 $ curl -L https://github.com/Homebrew/brew/tarball/master | tar xz --strip 1 -C homebrew   
 $ brew install coreutils git peco tig jq emojify
 $ brew install zsh-completions zsh-syntax-highlighting
