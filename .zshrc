@@ -9,10 +9,7 @@ source "${profiles}/funcs.zsh"
 
 init_aliases
 
-# >>> grok installer >>>
-export PATH="$HOME/.grok/bin:$PATH"
-fpath=("$HOME/.grok/completions/zsh" $fpath)
-# <<< grok installer <<<
+load_pre_zshrc
 
 init_base_zshrc
 

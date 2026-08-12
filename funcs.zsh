@@ -77,3 +77,13 @@ function load_sub_zshrc () {
         done
     done
 }
+
+function load_pre_zshrc () {
+    for i in "$profiles/zshrc/pre"; do
+        for f in "$i"/*.zsh; do
+            if [ -f "$f" ]; then
+                source "$f"
+            fi
+        done
+    done
+}
